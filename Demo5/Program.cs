@@ -2,7 +2,7 @@
 {
     internal class Program
     {
-        public static void PrintShape(int Count = 10  , string Pattern= "*_*")
+        public static void PrintShape(int Count = 10, string Pattern = "*_*")
         {
             for (int i = 0; i < Count; i++)
                 Console.WriteLine(Pattern);
@@ -14,7 +14,7 @@
         //    x = y;
         //    y = Temp;
         //} 
-        static void Swap(ref int x,  ref int y)
+        static void Swap(ref int x, ref int y)
         {
             int Temp = x;
             x = y;
@@ -32,16 +32,16 @@
         //            sum += nums[i];
         //        }
         //    }
-      
+
         //    return sum;
         //}
-        static int SumArray( int x , int y , params  int[] nums) // the params should be the last parameter
+        static int SumArray(int x, int y, params int[] nums) // the params should be the last parameter
 
         {
             int sum = 0;
             if (nums != null)
             {
-            
+
                 for (int i = 0; i < nums.Length; i++)
                 {
                     sum += nums[i];
@@ -52,9 +52,9 @@
         }
 
 
-        static void SumMul(int x, int y, ref int sum, ref int mul) 
+        static void SumMul(int x, int y, ref int sum, ref int mul)
         {
-            sum = x + y; 
+            sum = x + y;
             mul = x - y;
         }
         static void Main(string[] args)
@@ -342,7 +342,7 @@
             //Console.WriteLine(res);
             //int a = 10 ; int b = 20; int c = 30  , d=60;
             //string name = "test"; 
- 
+
             //Console.WriteLine("{0} + {1} + {2} = {3} {4} ",a , b  , c , d ,name);
 
 

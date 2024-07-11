@@ -1,4 +1,4 @@
-﻿using Common6; 
+﻿using Common6;
 namespace Demo6
 {
     // What access modifiers allowed inside namespace ? 
@@ -17,16 +17,16 @@ namespace Demo6
     [Flags]
     public enum Permission : byte
     {
-        Delete = 1 , Execute = 2 , Read = 4, Write = 8
+        Delete = 1, Execute = 2, Read = 4, Write = 8
     }
     public enum Gender
     {
-        Male , Female
+        Male, Female
     }
 
     public enum Grade
     {
-        A , B , C , D , E ,F 
+        A, B, C, D, E, F
     }
 
     class Employee
@@ -35,7 +35,7 @@ namespace Demo6
         public int Age;
         public Gender Gender;
         public decimal Salary;
-        public Permission Permissions; 
+        public Permission Permissions;
 
     }
     internal class Program
@@ -213,5 +213,5 @@ namespace Demo6
         }
     }
 
-   
+
 }

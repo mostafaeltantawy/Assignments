@@ -2,11 +2,11 @@
 {
     public class TypeA
     {
-       private int X; // Accessible within Its Sope Only 
-        internal int Y; 
+        private int X; // Accessible within Its Sope Only 
+        internal int Y;
         public int Z;
 
-         void Print()
+        void Print()
         {
             Console.WriteLine(X);
         }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Demo6
+﻿namespace Demo6
 {
     internal struct Point
     {
@@ -16,13 +10,13 @@ namespace Demo6
 
         // When create a user defined counstructor in struct should intialize all attributes
 
-        public Point(int _x , int _y)
+        public Point(int _x, int _y)
         {
             X = _x;
             Y = _y;
         }
 
-        public Point(int number )
+        public Point(int number)
         {
             X = Y = number;
         }
@@ -33,9 +27,9 @@ namespace Demo6
         //    y = 2;    
         //}
 
-        public override string ToString() 
+        public override string ToString()
         {
-            return $"({X} , {Y})"; 
+            return $"({X} , {Y})";
         }
 
 

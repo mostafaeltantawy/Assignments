@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Assign4
+﻿namespace Assign4
 {
     internal class Program
     {
@@ -448,7 +446,7 @@ namespace Assign4
             //    Console.WriteLine(array[i]);
 
             //}
-               
+
             #endregion
 
 

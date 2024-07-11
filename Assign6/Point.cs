@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assign6
+﻿namespace Assign6
 {
     internal struct Point
     {
-        public double X , Y;
-        public Point(double x , double y )
+        public double X, Y;
+        public Point(double x, double y)
         {
             X = x;
             Y = y;
@@ -17,7 +11,7 @@ namespace Assign6
 
         public override string ToString()
         {
-            return $"( {X} , {Y} )"; 
+            return $"( {X} , {Y} )";
         }
     }
 }

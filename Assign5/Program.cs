@@ -92,14 +92,14 @@
         }
         static void PassByReference(ref int value)
         {
-            value = 0; 
+            value = 0;
         }
 
         // #2
 
         static void PassReferenceTypeByValue(int[] arr)
         {
-            arr = new int[] { 1 , 2, 3 ,4 };
+            arr = new int[] { 1, 2, 3, 4 };
         }
         static void PassReferenceTypeByRef(ref int[] arr)
         {
@@ -107,30 +107,31 @@
         }
 
         // #3 
-        static void SumAndSubstractionOf4Numbers(int number1 , int number2 , int number3 , int number4  , out int sum , out int sub)
+        static void SumAndSubstractionOf4Numbers(int number1, int number2, int number3, int number4, out int sum, out int sub)
         {
             sum = number1 + number2 + number3 + number4;
             sub = number1 - number2 - number3 - number4;
         }
-                // Another implementation with tuples 
+        // Another implementation with tuples 
 
-        static (int sum , int sub) SumAndSubstractionOf4Numbers2(int number1, int number2, int number3, int number4)
+        static (int sum, int sub) SumAndSubstractionOf4Numbers2(int number1, int number2, int number3, int number4)
         {
             int sum = number1 + number2 + number3 + number4;
             int sub = number1 - number2 - number3 - number4;
-            return(sum , sub);
+            return (sum, sub);
 
         }
 
         // #4 
-        static int SumOfDigits(int num) { 
+        static int SumOfDigits(int num)
+        {
             int sum = 0;
 
             while (num > 0)
             {
                 int digit = num % 10;
                 sum += digit;
-                num  /= 10;
+                num /= 10;
             }
             return sum;
         }
@@ -150,7 +151,7 @@
         }
 
         // #6 
-        static void MinMaxArray(int[] numbers,ref int min , ref  int max)
+        static void MinMaxArray(int[] numbers, ref int min, ref int max)
         {
             foreach (int number in numbers)
             {
@@ -166,33 +167,33 @@
         }
 
         // #7
-        static long Factorial (int num)
+        static long Factorial(int num)
         {
 
-            if(num == 0 || num == 1) return 1;
+            if (num == 0 || num == 1) return 1;
 
             long fact = 1;
 
             while (num > 1)
             {
                 fact *= num;
-                num--; 
+                num--;
             }
             return fact;
 
         }
 
         // #8 
-        static string ChangeChar(int index ,  string text , char newChar)
+        static string ChangeChar(int index, string text, char newChar)
         {
-            char[] charArray = text.ToCharArray(); 
+            char[] charArray = text.ToCharArray();
 
-            if (index  > charArray.Length -1  )
+            if (index > charArray.Length - 1)
             {
-                return text; 
+                return text;
             }
-            charArray[index] = newChar ;
-            return  new string(charArray);
+            charArray[index] = newChar;
+            return new string(charArray);
 
         }
 

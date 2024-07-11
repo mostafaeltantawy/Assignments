@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace Assign6
+﻿namespace Assign6
 {
     // # 1
     enum WeekDays
@@ -17,19 +15,19 @@ namespace Assign6
     enum Season
     {
         Spring,
-        Summer ,
-        Autumn ,
+        Summer,
+        Autumn,
         Winter
     }
     [Flags]
     enum Permission : byte
     {
-        Read = 1 , Write = 2   , Delete =4 , Execute =8 ,
+        Read = 1, Write = 2, Delete = 4, Execute = 8,
     }
 
     enum Color
     {
-        Red , Green , Blue 
+        Red, Green, Blue
     }
     internal class Program
     {
@@ -46,17 +44,17 @@ namespace Assign6
             #region Create an enum called "Season" with the four seasons (Spring, Summer, Autumn, Winter) as its members. Write a C# program that takes a season name as input from the user and displays the corresponding month range for that season
 
             string input;
-            Season season; 
+            Season season;
 
             do
             {
                 Console.WriteLine("Enter A season : ");
                 input = Console.ReadLine();
 
-            } while (input == null );
+            } while (input == null);
 
 
-            if (Enum.TryParse<Season>(input, true, out season)) 
+            if (Enum.TryParse<Season>(input, true, out season))
             {
 
                 switch (season)
@@ -78,7 +76,7 @@ namespace Assign6
                         break;
 
                 }
-              
+
 
 
             }
@@ -140,8 +138,9 @@ namespace Assign6
             #endregion
         }
 
-        static Point ReadPoint(string PointNumber) {
-            double XCor  , YCor ;
+        static Point ReadPoint(string PointNumber)
+        {
+            double XCor, YCor;
             do
             {
                 Console.WriteLine($"Enter {PointNumber} X corodinate : ");
@@ -155,7 +154,7 @@ namespace Assign6
             } while (!double.TryParse(Console.ReadLine(), out YCor));
 
             return new Point(XCor, YCor);
-           
+
         }
     }
 }
