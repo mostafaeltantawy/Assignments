@@ -1,4 +1,6 @@
-﻿namespace Demo7
+﻿using Demo7.Inheritance;
+
+namespace Demo7
 {
     internal class Program
     {
@@ -62,16 +64,24 @@
             // 3. Call user defined constructer if exist 
             // 4. Assign refrence c1 to allocated object at heap
 
-            Car c1 = new Car(10, "BMW", 290);
-            Console.WriteLine(c1);
-            Console.WriteLine("--------------------");
-            Car c2 = new Car(20, "BYD");
-            Console.WriteLine(c2);
-            Console.WriteLine("--------------------");
-            Car c3 = new Car(30);
-            Console.WriteLine(c3);
+            //Car c1 = new Car(10, "BMW", 290);
+            //Console.WriteLine(c1);
+            //Console.WriteLine("--------------------");
+            //Car c2 = new Car(20, "BYD");
+            //Console.WriteLine(c2);
+            //Console.WriteLine("--------------------");
+            //Car c3 = new Car(30);
+            //Console.WriteLine(c3);
 
             #endregion
+
+            Parent p = new Parent(1, 2);
+            Console.WriteLine(p);
+            Console.WriteLine(p.Product());
+
+            Child c = new Child(3, 4, 5);
+            Console.WriteLine(c);
+            Console.WriteLine(c.Product());
 
 
 
