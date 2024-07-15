@@ -131,18 +131,18 @@ namespace Demo8
            // typeB.MyFun02();
 
 
-            TypeA typeA = new TypeE(1, 2, 3 , 4 , 5 );
-            TypeB typeB = new TypeE(1, 2, 3, 4, 5);
-            TypeC typeC = new TypeE(1, 2, 3, 4, 5);
+            //TypeA typeA = new TypeE(1, 2, 3 , 4 , 5 );
+            //TypeB typeB = new TypeE(1, 2, 3, 4, 5);
+            //TypeC typeC = new TypeE(1, 2, 3, 4, 5);
 
-            typeA.MyFun02(); 
-            typeB.MyFun02();
-            typeC.MyFun02();
+            //typeA.MyFun02(); 
+            //typeB.MyFun02();
+            //typeC.MyFun02();
 
 
-            TypeD typeD = new TypeE(1, 2, 3, 4, 5);
+            //TypeD typeD = new TypeE(1, 2, 3, 4, 5);
 
-            typeD.MyFun02();
+            //typeD.MyFun02();
 
 
 
