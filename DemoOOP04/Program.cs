@@ -363,21 +363,40 @@ namespace DemoOOP04
             //    Console.WriteLine(numbers[i]);
             //}
 
-            Employee[] employees = new Employee[] 
+            //Employee[] employees = new Employee[] 
+            //{
+            //    new Employee(){Id = 100 , Name = "mostafa" , Salary = 1000} ,
+            //    new Employee(){Id = 90 , Name = "Ali" , Salary = 900} , 
+            //    new Employee(){Id = 200 , Name = "Osama" , Salary = 9000}
+
+            //};
+
+            //Array.Sort(employees);
+
+            //foreach (Employee employee in employees) 
+            //{
+            //    Console.WriteLine(employee);
+            //}
+
+
+            #endregion
+
+            #region ICopmarer
+
+            Employee[] employees = new Employee[]
             {
                 new Employee(){Id = 100 , Name = "mostafa" , Salary = 1000} ,
-                new Employee(){Id = 90 , Name = "Ali" , Salary = 900} , 
+                new Employee(){Id = 90 , Name = "Ali" , Salary = 900} ,
                 new Employee(){Id = 200 , Name = "Osama" , Salary = 9000}
 
             };
 
-            Array.Sort(employees);
+            Array.Sort(employees , new EmployeeIdComparer());
 
-            foreach (Employee employee in employees) 
+            foreach (Employee employee in employees)
             {
                 Console.WriteLine(employee);
             }
-
 
             #endregion
 
