@@ -1,5 +1,5 @@
 ﻿using DemoOOP05.Abstraction;
-using DemoOOP05.Models;
+using DemoOOP05.Partial;
 using DemoOOP05.Sealed;
 using DemoOOP05.Static;
 
@@ -124,8 +124,13 @@ namespace DemoOOP05
 
             #endregion
 
-            #region Sealed
-            
+            #region Partial
+            Employee employee = new Employee();
+            employee.Id = 1;
+            employee.Name = "Mostafa";
+            employee.Age = 30;
+            employee.Salary = 2312;
+            employee.print(); 
             #endregion
 
 
