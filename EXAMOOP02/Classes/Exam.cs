@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EXAMOOP02.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,9 +19,12 @@ namespace EXAMOOP02.Classes
         public DateTime TimeOfExam { get; set; }
         public int NumberOfQuetions { get; set; }
         public Question[] Questions { get; set; }
+        
         public abstract void ShowExam(); 
      
 
         public abstract void CreateExam();
+
+        public abstract void ShowTheResult();
     }
 }

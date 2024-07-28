@@ -2,7 +2,7 @@
 
 namespace EXAMOOP02.Classes
 {
-    internal class Answer
+    public class Answer
     {
         public Answer(int answerId, string answerText)
         {

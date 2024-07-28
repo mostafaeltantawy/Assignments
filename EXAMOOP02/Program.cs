@@ -1,4 +1,5 @@
 ﻿using EXAMOOP02.Classes;
+using EXAMOOP02.Enums; 
 
 namespace EXAMOOP02
 {
@@ -6,10 +7,10 @@ namespace EXAMOOP02
     {
         static void Main(string[] args)
         {
-            FinalExam exam = new FinalExam(DateTime.Now,1);
-            exam.CreateExam();
-            exam.ShowExam();
-            exam.ShowTheResult(); 
+            Subject Math = new Subject(10, "Math");
+            Math.CreateExam(DateTime.Now, 2,ExamType.FinalExam);
+            Math.ExamOfTheSubject.ShowExam();
+            Math.ExamOfTheSubject.ShowTheResult();
         }
     }
 }

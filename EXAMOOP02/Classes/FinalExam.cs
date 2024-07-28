@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using EXAMOOP02.Enums;
 
 namespace EXAMOOP02.Classes
 {
@@ -10,6 +8,7 @@ namespace EXAMOOP02.Classes
     {
         private int[] StudentAnswers;
         private double TotalMark;
+       
         public FinalExam(DateTime timeOfExam, int numberOfQuetions) : base(timeOfExam, numberOfQuetions)
         {
             StudentAnswers = new int[numberOfQuetions];
@@ -17,9 +16,19 @@ namespace EXAMOOP02.Classes
 
         public override void CreateExam()
         {
+
             for (int i = 0; i < NumberOfQuetions; i++)
             {
-                Questions[i] = MCQ.CreateQuestion(i + 1);
+                int QuestionType;
+                do
+                {
+                    Console.WriteLine("Choose Question Type : 1 - MCQ | 2  - True Or False");
+
+                } while (!int.TryParse(Console.ReadLine(), out QuestionType) || QuestionType < 1 || QuestionType > 2);
+                if (QuestionType == 1)
+                    Questions[i] = MCQ.CreateQuestion(i + 1);
+                else
+                    Questions[i] = TrueOrFalse.CreateQuestion(i + 1);
             }
         }
 
@@ -46,13 +55,13 @@ namespace EXAMOOP02.Classes
 
         }
 
-        public void ShowTheResult()
+        public override void ShowTheResult()
         {
             for (int i = 0; i < NumberOfQuetions; i++)
             {
                 if (Questions[i].RightAnswer == StudentAnswers[i])
                 {
-                    TotalMark += Questions[i].Mark; 
+                    TotalMark += Questions[i].Mark;
                 }
             }
 
