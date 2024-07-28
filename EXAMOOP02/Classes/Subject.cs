@@ -25,13 +25,13 @@ namespace EXAMOOP02.Classes
         {
             if (examType == ExamType.FinalExam)
             {
-                ExamOfTheSubject = new FinalExam(timeOfExam, numberOfQuestions);
+                ExamOfTheSubject = new FinalExam( numberOfQuestions);
                 ExamOfTheSubject.CreateExam(); 
                 
             }
             else if (examType == ExamType.PracticalExam)
             {
-                ExamOfTheSubject = new FinalExam(timeOfExam, numberOfQuestions);
+                ExamOfTheSubject = new PracticalExam( numberOfQuestions);
                 ExamOfTheSubject.CreateExam();
 
             }

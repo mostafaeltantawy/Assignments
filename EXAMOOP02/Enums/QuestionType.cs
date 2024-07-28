@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EXAMOOP02.Enums
 {
-    internal enum QuestionType
+    public enum QuestionType
     {
-        TrueOrFalse , MCQ
+        MCQ = 1 , TrueOrFalse = 2 
     }
 }

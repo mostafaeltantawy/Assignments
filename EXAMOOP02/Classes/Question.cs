@@ -14,7 +14,8 @@ namespace EXAMOOP02.Classes
         public double Mark { get; set; }
         public Answer[] Answers { get; set; }
         public int RightAnswer { get; set; }
-        
+        public QuestionType  QuestionType { get; set; }
+
 
         public Question( QuestionType questionType  ,  string bodyOfTheQuestion, double mark, Answer[] answers, int rightAnswer)
         {
@@ -23,6 +24,7 @@ namespace EXAMOOP02.Classes
             Mark = mark;
             Answers = answers;
             RightAnswer = rightAnswer;
+            QuestionType = questionType;
         }
 
 

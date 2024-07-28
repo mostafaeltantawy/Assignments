@@ -8,9 +8,10 @@ namespace EXAMOOP02
         static void Main(string[] args)
         {
             Subject Math = new Subject(10, "Math");
-            Math.CreateExam(DateTime.Now, 2,ExamType.FinalExam);
+            Math.CreateExam(DateTime.Now, 1,ExamType.PracticalExam);
             Math.ExamOfTheSubject.ShowExam();
-            Math.ExamOfTheSubject.ShowTheResult();
+            Console.WriteLine($"Your Grade is {Math.ExamOfTheSubject.Result} of {Math.ExamOfTheSubject.TotalMark}");
+            Console.WriteLine($"Tiem = {Math.ExamOfTheSubject.TimeOfExam}");
         }
     }
-}
+    }

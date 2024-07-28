@@ -1,4 +1,5 @@
 ﻿using EXAMOOP02.Classes;
+using EXAMOOP02.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace EXAMOOP02.Util
 {
     public static class InputHandler
     {
+        #region CreatingQuestions
         public static string GetBodyInput(int QuestionNumber)
         {
             string BodyOfTheQuestion;
@@ -24,7 +26,7 @@ namespace EXAMOOP02.Util
 
         public static double GetQuestionMark()
         {
-            double Mark; 
+            double Mark;
             do
             {
                 Console.WriteLine("Enter The Mark ");
@@ -33,7 +35,7 @@ namespace EXAMOOP02.Util
             return Mark;
         }
 
-        public static int  GetTheRightAnswerForTrueOrFalse()
+        public static int GetTheRightAnswerForTrueOrFalse()
         {
             int rightAnswerNumber;
             do
@@ -56,15 +58,48 @@ namespace EXAMOOP02.Util
 
         public static int GetTheRightAnswerForMCQ()
         {
-            int rightAnswerNumber; 
+            int rightAnswerNumber;
 
             do
             {
                 Console.WriteLine("Enter The Right Answer Number ");
 
             } while (!int.TryParse(Console.ReadLine(), out rightAnswerNumber) || !(rightAnswerNumber > 0) || !(rightAnswerNumber <= 4));
-            return rightAnswerNumber; 
+            return rightAnswerNumber;
         }
+        public static QuestionType GetQuestionType()
+        {
+            QuestionType questionType;
+            do
+            {
+                Console.WriteLine("Choose Question Type : 1 - MCQ | 2  - True Or False");
+
+            } while (!Enum.TryParse<QuestionType>(Console.ReadLine(), true, out questionType));
+
+            return questionType;
+        }
+
+        #endregion
+
+        #region GettingAnswer
+
+        public static int GetAnswer(int questionNumber, QuestionType questionType)
+        {
+            int answerNumber;
+            if (QuestionType.TrueOrFalse == questionType)
+
+                answerNumber = GetTheRightAnswerForTrueOrFalse();
+
+            else
+
+                answerNumber = GetTheRightAnswerForMCQ();
+
+            return answerNumber; 
+
+
+        }
+        #endregion
+
 
     }
 }
