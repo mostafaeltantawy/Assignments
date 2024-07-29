@@ -70,5 +70,16 @@ namespace EXAMOOP02.Util
             }
             Console.WriteLine("-------------------------------------------");
         }
+
+        public static void StartExam()
+        {
+            string userInput; 
+            do
+            {
+                Console.WriteLine("Do you wanna start exam ?  (Y | N)");
+                 userInput = Console.ReadLine();
+
+            } while ( userInput?.ToLower() != "y");
+        }
     }
 }

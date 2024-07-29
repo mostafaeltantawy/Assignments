@@ -15,6 +15,7 @@ namespace EXAMOOP02
             int numberOfQuestions = Helper.GetNumberOfQuestions();
             TimeSpan time = Helper.GetExamDuration();
             Exam MathExam = Math.CreateExam(numberOfQuestions, examtype ,  time , input);
+            Helper.StartExam();
             MathExam.ShowExam();
             Helper.ShowRightAnswers(MathExam , numberOfQuestions); 
             Console.WriteLine($"Your Grade is {MathExam.Result} of {MathExam.TotalMark}");
