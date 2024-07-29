@@ -1,4 +1,5 @@
 ﻿using EXAMOOP02.Enums;
+using EXAMOOP02.Intefaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace EXAMOOP02.Classes
 
         public int SubjectId { get; set; }
         public string SubjectName { get; set; }
-        public Exam ExamOfTheSubject { get; set; }
+        private Exam ExamOfTheSubject { get; set; }
 
         public Subject(int subjectId, string subjectName)
         {
@@ -21,20 +22,21 @@ namespace EXAMOOP02.Classes
             SubjectName = subjectName;
         }
 
-        public void CreateExam(DateTime timeOfExam, int numberOfQuestions, ExamType examType)
+        public Exam CreateExam( int numberOfQuestions, ExamType examType , IInputHandler inputHandler)
         {
             if (examType == ExamType.FinalExam)
             {
-                ExamOfTheSubject = new FinalExam( numberOfQuestions);
+                ExamOfTheSubject = new FinalExam( numberOfQuestions , inputHandler);
                 ExamOfTheSubject.CreateExam(); 
                 
             }
             else if (examType == ExamType.PracticalExam)
             {
-                ExamOfTheSubject = new PracticalExam( numberOfQuestions);
+                ExamOfTheSubject = new PracticalExam( numberOfQuestions, inputHandler);
                 ExamOfTheSubject.CreateExam();
 
             }
+            return ExamOfTheSubject; 
         }
     }
 }

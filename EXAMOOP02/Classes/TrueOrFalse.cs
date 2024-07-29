@@ -1,4 +1,5 @@
 ﻿using EXAMOOP02.Enums;
+using EXAMOOP02.Intefaces;
 using EXAMOOP02.Util;
 
 
@@ -13,16 +14,16 @@ namespace EXAMOOP02.Classes
         {
         }
 
-        public static TrueOrFalse CreateQuestion(int questionNumber)
+        public static TrueOrFalse CreateQuestion(int questionNumber , IInputHandler inputHandler)
         {
 
             Answer[] answers = [new Answer(1, "True"), new Answer(2, "False")];
 
-            string BodyOfTheQuestion = InputHandler.GetBodyInput(questionNumber);
+            string BodyOfTheQuestion = inputHandler.GetBodyInput(questionNumber , QuestionType.MCQ);
 
-            double Mark = InputHandler.GetQuestionMark();
+            double Mark = inputHandler.GetQuestionMark();
 
-            int rightAnswerNumber = InputHandler.GetTheRightAnswerForTrueOrFalse();
+            int rightAnswerNumber = inputHandler.GetTheRightAnswerForTrueOrFalse();
 
             return new TrueOrFalse(QuestionType.TrueOrFalse, BodyOfTheQuestion, Mark, rightAnswerNumber);
 

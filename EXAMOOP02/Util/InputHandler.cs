@@ -1,21 +1,19 @@
 ﻿using EXAMOOP02.Classes;
 using EXAMOOP02.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EXAMOOP02.Intefaces;
+
 
 namespace EXAMOOP02.Util
 {
-    public static class InputHandler
+    public  class InputHandler :IInputHandler
     {
         #region CreatingQuestions
-        public static string GetBodyInput(int QuestionNumber)
+        public  string GetBodyInput(int QuestionNumber , QuestionType questionType)
         {
             string BodyOfTheQuestion;
             do
             {
+                Console.WriteLine($"{questionType} Question");
                 Console.WriteLine($"Please Enter The Body Of The Question #{QuestionNumber}");
                 BodyOfTheQuestion = Console.ReadLine();
 
@@ -24,18 +22,20 @@ namespace EXAMOOP02.Util
             return BodyOfTheQuestion;
         }
 
-        public static double GetQuestionMark()
+        public  double GetQuestionMark()
         {
             double Mark;
             do
             {
                 Console.WriteLine("Enter The Mark ");
 
-            } while (!double.TryParse(Console.ReadLine(), out Mark));
+            } while (!double.TryParse(Console.ReadLine(), out Mark) || Mark <= 0 );
             return Mark;
         }
 
-        public static int GetTheRightAnswerForTrueOrFalse()
+
+
+        public  int GetTheRightAnswerForTrueOrFalse()
         {
             int rightAnswerNumber;
             do
@@ -46,17 +46,31 @@ namespace EXAMOOP02.Util
             return rightAnswerNumber;
         }
 
-        public static void GetMCQAnswers(Answer[] answers)
+        public  Answer CreateAnswer(int answerId)
         {
+            string answerText;
+            do
+            {
+                Console.WriteLine($"Please Enter Answer #{answerId} : ");
+                answerText = Console.ReadLine();
+
+            } while (answerText.Trim() == "" || answerText is null);
+
+            return new Answer(answerId, answerText);
+        }
+
+        public  void GetMCQAnswers(Answer[] answers)
+        {
+
             for (int i = 0; i < answers.Length; i++)
             {
 
-                answers[i] = Answer.CreateAnswer(i + 1);
+                answers[i] = CreateAnswer(i + 1);
 
             }
         }
 
-        public static int GetTheRightAnswerForMCQ()
+        public  int GetTheRightAnswerForMCQ()
         {
             int rightAnswerNumber;
 
@@ -67,7 +81,7 @@ namespace EXAMOOP02.Util
             } while (!int.TryParse(Console.ReadLine(), out rightAnswerNumber) || !(rightAnswerNumber > 0) || !(rightAnswerNumber <= 4));
             return rightAnswerNumber;
         }
-        public static QuestionType GetQuestionType()
+        public  QuestionType GetQuestionType()
         {
             QuestionType questionType;
             do
@@ -83,7 +97,7 @@ namespace EXAMOOP02.Util
 
         #region GettingAnswer
 
-        public static int GetAnswer(int questionNumber, QuestionType questionType)
+        public  int GetAnswer(int questionNumber, QuestionType questionType)
         {
             int answerNumber;
             if (QuestionType.TrueOrFalse == questionType)
@@ -98,6 +112,8 @@ namespace EXAMOOP02.Util
 
 
         }
+
+      
         #endregion
 
 

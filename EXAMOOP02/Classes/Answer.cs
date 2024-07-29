@@ -10,22 +10,12 @@ namespace EXAMOOP02.Classes
             AnswerText = answerText;
         }
 
-        public int AnswerId { get; set; }
-        public string AnswerText { get; set; }
+
+        public int AnswerId { get;private set; }
+        public string AnswerText { get; private set; }
 
 
-        public static Answer CreateAnswer(int answerId)
-        {
-            string answerText;
-            do
-            {
-                Console.WriteLine($"Please Enter Answer #{answerId} : ");
-                answerText = Console.ReadLine();
-
-            } while (answerText.Trim() == "" || answerText is null);
-
-            return new Answer(answerId, answerText);
-        }
+       
 
         public override string ToString()
         {

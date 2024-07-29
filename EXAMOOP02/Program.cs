@@ -1,5 +1,7 @@
 ﻿using EXAMOOP02.Classes;
-using EXAMOOP02.Enums; 
+using EXAMOOP02.Enums;
+using EXAMOOP02.Intefaces;
+using EXAMOOP02.Util;
 
 namespace EXAMOOP02
 {
@@ -7,11 +9,12 @@ namespace EXAMOOP02
     {
         static void Main(string[] args)
         {
+            IInputHandler input = new InputHandler(); 
             Subject Math = new Subject(10, "Math");
-            Math.CreateExam(DateTime.Now, 1,ExamType.PracticalExam);
-            Math.ExamOfTheSubject.ShowExam();
-            Console.WriteLine($"Your Grade is {Math.ExamOfTheSubject.Result} of {Math.ExamOfTheSubject.TotalMark}");
-            Console.WriteLine($"Tiem = {Math.ExamOfTheSubject.TimeOfExam}");
+            Exam MathExam = Math.CreateExam(1, ExamType.FinalExam , input);
+            MathExam.ShowExam();
+            Console.WriteLine($"Your Grade is {MathExam.Result} of {MathExam.TotalMark}");
+            Console.WriteLine($"Tiem = {MathExam.TimeOfExam}");
         }
     }
-    }
+}

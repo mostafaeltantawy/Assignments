@@ -1,4 +1,5 @@
 ﻿using EXAMOOP02.Enums;
+using EXAMOOP02.Intefaces;
 using EXAMOOP02.Util;
 using System;
 using System.Collections.Generic;
@@ -16,18 +17,18 @@ namespace EXAMOOP02.Classes
         }
 
 
-        public static MCQ CreateQuestion(int questionNumber)
+        public static MCQ CreateQuestion(int questionNumber , IInputHandler inputHandler)
         {
 
             Answer[] answers = new Answer[4];
 
-            string BodyOfTheQuestion = InputHandler.GetBodyInput(questionNumber);
+            string BodyOfTheQuestion = inputHandler.GetBodyInput(questionNumber , QuestionType.MCQ);
 
-            double Mark = InputHandler.GetQuestionMark();
+            double Mark = inputHandler.GetQuestionMark();
 
-            InputHandler.GetMCQAnswers(answers);
+            inputHandler.GetMCQAnswers(answers);
 
-            int rightAnswerNumber = InputHandler.GetTheRightAnswerForMCQ();
+            int rightAnswerNumber = inputHandler.GetTheRightAnswerForMCQ();
 
             return new MCQ(QuestionType.MCQ, BodyOfTheQuestion, Mark, answers, rightAnswerNumber);
 
