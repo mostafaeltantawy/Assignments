@@ -19,7 +19,7 @@ namespace EXAMOOP02.Classes
 
             Answer[] answers = [new Answer(1, "True"), new Answer(2, "False")];
 
-            string BodyOfTheQuestion = inputHandler.GetBodyInput(questionNumber , QuestionType.MCQ);
+            string BodyOfTheQuestion = inputHandler.GetBodyInput(questionNumber , QuestionType.TrueOrFalse);
 
             double Mark = inputHandler.GetQuestionMark();
 
