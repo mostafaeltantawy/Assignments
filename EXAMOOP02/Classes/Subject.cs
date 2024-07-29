@@ -10,33 +10,41 @@ namespace EXAMOOP02.Classes
 {
     internal class Subject
     {
-  
-
+        #region Props
         public int SubjectId { get; set; }
         public string SubjectName { get; set; }
         private Exam ExamOfTheSubject { get; set; }
 
+        #endregion
+
+        #region constructor
         public Subject(int subjectId, string subjectName)
         {
             SubjectId = subjectId;
             SubjectName = subjectName;
         }
 
-        public Exam CreateExam( int numberOfQuestions, ExamType examType , IInputHandler inputHandler)
+
+        #endregion
+
+        #region methods
+        public Exam CreateExam(int numberOfQuestions, ExamType examType, TimeSpan timeOfExam, IInputHandler inputHandler)
         {
             if (examType == ExamType.FinalExam)
             {
-                ExamOfTheSubject = new FinalExam( numberOfQuestions , inputHandler);
-                ExamOfTheSubject.CreateExam(); 
-                
-            }
-            else if (examType == ExamType.PracticalExam)
-            {
-                ExamOfTheSubject = new PracticalExam( numberOfQuestions, inputHandler);
+                ExamOfTheSubject = new FinalExam(numberOfQuestions, timeOfExam, inputHandler);
                 ExamOfTheSubject.CreateExam();
 
             }
-            return ExamOfTheSubject; 
+            else if (examType == ExamType.PracticalExam)
+            {
+                ExamOfTheSubject = new PracticalExam(numberOfQuestions, timeOfExam, inputHandler);
+                ExamOfTheSubject.CreateExam();
+
+            }
+            return ExamOfTheSubject;
         }
+        #endregion
+
     }
 }

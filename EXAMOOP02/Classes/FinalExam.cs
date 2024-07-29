@@ -11,7 +11,7 @@ namespace EXAMOOP02.Classes
        
 
 
-        public FinalExam( int numberOfQuetions , IInputHandler inputHandler) : base( numberOfQuetions ,  inputHandler)
+        public FinalExam( int numberOfQuetions , TimeSpan timeOfExam, IInputHandler inputHandler) : base( numberOfQuetions  ,  timeOfExam,  inputHandler)
         {
             
         }

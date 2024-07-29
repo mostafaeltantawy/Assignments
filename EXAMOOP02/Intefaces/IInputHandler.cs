@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EXAMOOP02.Intefaces
 {
-    internal interface IInputHandler
+    public interface IInputHandler
     {
         string GetBodyInput(int questionNumber, QuestionType questionType);
         double GetQuestionMark();

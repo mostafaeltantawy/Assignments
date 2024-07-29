@@ -11,10 +11,14 @@ namespace EXAMOOP02
         {
             IInputHandler input = new InputHandler(); 
             Subject Math = new Subject(10, "Math");
-            Exam MathExam = Math.CreateExam(1, ExamType.FinalExam , input);
+            ExamType examtype = Helper.GetExamType();
+            int numberOfQuestions = Helper.GetNumberOfQuestions();
+            TimeSpan time = Helper.GetExamDuration();
+            Exam MathExam = Math.CreateExam(numberOfQuestions, examtype ,  time , input);
             MathExam.ShowExam();
+            Helper.ShowRightAnswers(MathExam , numberOfQuestions); 
             Console.WriteLine($"Your Grade is {MathExam.Result} of {MathExam.TotalMark}");
-            Console.WriteLine($"Tiem = {MathExam.TimeOfExam}");
+            Console.WriteLine($"Tiem = {MathExam.TimeTaken}");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace EXAMOOP02.Util
         #region CreatingQuestions
         public  string GetBodyInput(int QuestionNumber , QuestionType questionType)
         {
-            string BodyOfTheQuestion;
+            string? BodyOfTheQuestion;
             do
             {
                 Console.WriteLine($"{questionType} Question");
@@ -43,18 +43,20 @@ namespace EXAMOOP02.Util
                 Console.WriteLine("Enter The Right Answer Number 1 - True | 2 - False  ");
 
             } while (!int.TryParse(Console.ReadLine(), out rightAnswerNumber) || rightAnswerNumber < 0 || rightAnswerNumber > 2);
+            Console.Clear();
+
             return rightAnswerNumber;
         }
 
         public  Answer CreateAnswer(int answerId)
         {
-            string answerText;
+            string? answerText;
             do
             {
                 Console.WriteLine($"Please Enter Answer #{answerId} : ");
                 answerText = Console.ReadLine();
 
-            } while (answerText.Trim() == "" || answerText is null);
+            } while (answerText?.Trim() == "" || answerText is null);
 
             return new Answer(answerId, answerText);
         }
@@ -79,6 +81,7 @@ namespace EXAMOOP02.Util
                 Console.WriteLine("Enter The Right Answer Number ");
 
             } while (!int.TryParse(Console.ReadLine(), out rightAnswerNumber) || !(rightAnswerNumber > 0) || !(rightAnswerNumber <= 4));
+            Console.Clear();
             return rightAnswerNumber;
         }
         public  QuestionType GetQuestionType()
@@ -88,7 +91,7 @@ namespace EXAMOOP02.Util
             {
                 Console.WriteLine("Choose Question Type : 1 - MCQ | 2  - True Or False");
 
-            } while (!Enum.TryParse<QuestionType>(Console.ReadLine(), true, out questionType));
+            } while (!Enum.TryParse<QuestionType>(Console.ReadLine(), true, out questionType) || !Enum.IsDefined(typeof(QuestionType), questionType));
 
             return questionType;
         }

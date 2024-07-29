@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EXAMOOP02.Enums
 {
-    internal enum ExamType
+    public enum ExamType
     {
         PracticalExam = 1 , FinalExam
     }

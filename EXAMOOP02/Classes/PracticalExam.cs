@@ -11,7 +11,7 @@ namespace EXAMOOP02.Classes
 {
     internal class PracticalExam : Exam
     {
-        public PracticalExam( int numberOfQuetions , IInputHandler inputHandler) : base( numberOfQuetions , inputHandler)
+        public PracticalExam( int numberOfQuetions , TimeSpan timeOfExam, IInputHandler inputHandler) : base( numberOfQuetions ,timeOfExam, inputHandler)
         {
         }
 
