@@ -1,0 +1,75 @@
+﻿
+1. ArrayList
+	Structure:
+		ArrayList is a resizable array implementation provided by the .NET framework.
+		Internally uses a dynamic array to store elements.
+
+	Time Complexity
+		Access by index: O(1)
+		Insertion/Removal : O(n) it is the worst case when the cpacity is full and resizing happen but in ordinary insertion O(1)
+		Search: O(n)
+
+	Business Case
+		Use ArrayList when you need a simple, dynamic array that can resize automatically and when type safety is not a concern
+
+
+
+
+2. List<T>
+	Structure
+		List<T> is a generic version of ArrayList in C#.
+		Internally uses a dynamic array to store elements.
+	Time Complexity
+		Access by index: O(1)
+		Insertion/Removal : O(n) it is the worst case when the cpacity is full and resizing happen but in ordinary insertion O(1)
+		Search: O(n)
+
+	Business Case
+		Use List<T> when you need a dynamically resizable array with type safety provided by generics.
+
+3. LinkedList<T>
+	Structure
+		It is implementation depends on LinkedListNode<T> class 
+		Each node contains a value and references to the next .
+	Time Complexity
+		Access by index: O(n)
+		Insertion/Removal: O(1)
+		Search: O(n)
+	Business Case
+		Use LinkedList<T> when frequent insertions and deletions are needed, especially at the beginning or end, and when you need to traverse elements sequentially.
+
+4. Queue<T>
+	Structure
+	Queue<T> is a FIFO (First In, First Out) collection.
+	Internally uses a dynamic array to store elements.
+	Time Complexity
+		Enqueue: O(1) 
+		Dequeue: O(1)
+		Peek: O(1)
+		Search: O(n)
+	Business Case
+		Use Queue<T> for scenarios where you need to process elements in the order they were added, such as task scheduling or handling requests , Call Center example.	
+
+
+5. Stack<T>
+	Structure
+		Stack<T> is a LIFO (Last In, First Out) collection.
+	I	nternally uses a dynamic array to store elements.
+	Time Complexity
+		Push: O(1) 
+		Pop: O(1)
+		Peek: O(1)
+		Search: O(n)
+	Business Case
+		Use Stack<T> for scenarios where you need to process elements in  navigating browser history.
+
+
+-----> About stack and queue
+	the implementation of Stack<T> and Queue<T> in C# using arrays does affect their performance. Both Stack<T> and Queue<T> are designed to provide efficient O(1) 
+	operations for their primary methods (e.g., Push, Pop, Enqueue, Dequeue). 
+	when the capacity is exceeded:
+		in the stack when push the resizeing happen which is O(n) 
+		in the Queue when enqueue the resizeing happen which is O(n) 
+
+		
+	
